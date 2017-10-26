@@ -75,6 +75,14 @@ header p {
 
 .mobile-title { display: none; }
 
+.fixed-top{
+    transform: translateY(-65px);
+}
+
+.sticky-nav {
+    width: 42%;
+}
+
 /*HEADER ON HOVER*/
 .logo:hover {
     text-decoration: none;

@@ -26,6 +26,18 @@ $(document).ready(function () {
         }
     });
 
+    //Fixed Nav after Scrolling
+    var header = $('#header-bar');
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 220) {
+            header.addClass('fixed-top');
+        } else {
+            header.removeClass('fixed-top');
+        }
+    });
+
+
     //Change landing page background image & nav bar based on size
     $(function () {
         if ($(window).width() < 576) {
