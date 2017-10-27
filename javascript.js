@@ -9,11 +9,11 @@ $(document).ready(function () {
     var icons = $('.nav-link > img');
     var logo = $('.logo');
 
-    if ($(window).width() < 974) {
+    if ($(window).width() < 992) {
         iconsContainer.removeClass('d-flex justify-content-center');
     }
 
-    if ($(window).width() < 559) {
+    if ($(window).width() < 576) {
         //Change landing page background image & nav bar based on size
         if (window.innerHeight < window.innerWidth) {
             bgImage.attr('src', 'images/bg_art.png');
