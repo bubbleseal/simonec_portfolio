@@ -1,7 +1,7 @@
 h1{ padding: 32px; color: #60365c; font-size: 3em; font-family: 'Alegreya Sans SC', sans-serif; font-weight: 900;}
 h2{ padding: 32px; color: #60365c; font-size: 2.2em; font-family: 'Alegreya Sans SC', sans-serif; font-weight: 700;}
 h3{ padding: 0; font-size: 1.4em; font-family: 'Alegreya Sans SC', sans-serif; font-weight: 400;}
-h4{ padding: 0; font-size: 1.2em; font-family: 'Open Sans', sans-serif;}
+h4{ padding: 0; font-size: 1.2em; font-family: 'Open Sans', sans-serif; }
 p { font-family: 'Open Sans', sans-serif;} 
 a { text-decoration: none !important; color: black; }
 a:hover { text-decoration: none !important; color: black;  }
@@ -149,7 +149,7 @@ header p {
     width: 100%; height: 70px;
     background: #f6e4d6;
     position: fixed; top:0; left: 0; right: 0;
-    z-index: 1; 
+    z-index: 5; 
     -webkit-box-shadow: 0px 5px 20px -4px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 5px 20px -4px rgba(0,0,0,0.75);
     box-shadow: 0px 5px 20px -4px rgba(0,0,0,0.75);
@@ -188,15 +188,6 @@ header p {
     
     transition: all .3s;
     -webkit-transition: all .3s;
-}
-
-.work p {
-    display: none;
-    text-transform: uppercase;
-    color: black;
-    margin: 0 0 20px 0; 
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .website-container:hover .website {
@@ -242,37 +233,88 @@ header p {
 }
 
 .website-container:hover .overlay-bg {
-    background-color: rgba(96,54,92,.5);
+    background-color: rgba(96,54,92,.7);
 }
 
-.overlay {
-    width: 100%; 
-    height: 100%;
-    overflow: hidden;
-    padding-top: 25%;
-    padding-bottom: 25%;
-    position: absolute;
-    top: 100%; 
-    left: 0;
+.website-title {
+    position: absolute; 
+    width: 100%;
+    color: #f7f7f7;
+    font-size: 1.4em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    transform: translateY(600%);
 
-    -webkit-transition: all .2s ease-out .2s;
-    transition: all .2s ease-out .2s;
+    -webkit-transition: transform .2s ease-in-out .2s;
+    transition: transform .2s ease-in-out .2s;
 }
 
-.website-container:hover .overlay { top: 0; }
+.website-container:hover .website-title {
+    transform: translateY(0);
 
-.website-container a {
-  color: #f7f7f7;
-  font-size: 2em;
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-weight: 700;
-  margin: 0; padding: 0;
-
-  -webkit-transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
+    -webkit-transition: transform .3s ease-in-out;
+    transition: transform .3s ease-in-out;
 }
 
-.website-container a:hover { transform: scale(1.05); }
+.work-links {
+    position: absolute; 
+    bottom: 20px;
+    z-index: 2;
+    background: #f7f7f7;
+    border-radius: 100%;
+    transform: translateY(150%);
+
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.site-link { right: 20px; }
+.git-link { right: 100px; }
+.link-icon { 
+    height: 45px;
+    margin: 8px;
+
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.website-container:hover .git-link {
+    transform: translateY(0);
+
+    -webkit-transition: transform .2s ease-out .3s;
+    transition: transform .2s ease-out .3s;
+}
+.website-container:hover .site-link {
+    transform: translateY(0);
+
+    -webkit-transition: transform .2s ease-out .4s;
+    transition: transform .2s ease-out .4s;
+}
+.work-links:hover .link-icon{
+    height: 51px;
+    margin: 5px;
+
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.mobile-website-container { 
+    display: none;
+    margin-bottom: 30px;
+}
+
+.mobile-website-title { 
+    text-transform: uppercase;
+    margin: 0; padding: 0;
+    font-size: 1.3em; font-weight: 500;
+}
+
+.mobile-git-link { 
+    background: #f7f7f7;
+    border: .5px #a7779f solid;
+    border-radius: 12px;
+    margin-left: 10px;
+}
 
 .git-container { padding: 30px 0; background: #a7779f;}
 .git-text { padding: 5px 20px; color: black; }
@@ -387,7 +429,7 @@ footer p { margin: 0; padding: 10px; }
     .sticky-icon-container { height: 40px !important; padding-top: 10px;}
 
     .git-img { height: 70px; margin: 15px; }
-    .git-button:hover .git-img {  height: 60px; margin: 10px; }
+    .git-button:hover .git-img {  height: 80px; margin: 10px; }
 
     .bio-desc-title { font-size: 1.5em; }
 }
@@ -419,7 +461,6 @@ footer p { margin: 0; padding: 10px; }
 /*tablet size*/
 @media screen and (max-width: 991px) {
     /*fonts*/
-    .overlay > a { font-size: 1.5em; }
     p { font-size: 20px; }
 
     /*Navigation & Header*/
@@ -455,8 +496,17 @@ footer p { margin: 0; padding: 10px; }
         font-size: 2em;
     }
 
+    .link-icon { 
+    height: 35px;
+    margin: 8px;
+    }
+    .work-links:hover .link-icon{
+        height: 51px;
+        margin: 5px;
+    }
+
+    .mobile-website-container { display: flex; }
     .mobile-link{ display: inline; }
-    .mobile-div{ display: inline; }
     .screen-div{ visibility: hidden; height: 30px; }
     header > div.row{ height: 500px; background-size: 120%; }
 
@@ -471,7 +521,6 @@ footer p { margin: 0; padding: 10px; }
 /*landscape mobile*/
 @media screen and (max-width: 767px) {
     /*fonts*/
-    .overlay > a { font-size: 1em; }
     p { font-size: 18px; }
 
     /*Navigation & Header*/
@@ -510,11 +559,10 @@ footer p { margin: 0; padding: 10px; }
         font-size: 2em;
     }
     
-    .tri-over, .overlay-bg, .overlay, .overlay > a { display: none; }
+    .tri-over, .overlay-bg { display: none; }
     .website { height: 80%;}
     .mobile-link { display: inline; }
     .work-container { padding-bottom: 0; }
-    .work p { display: inline; }
     .mobile-div{ display: inline; }
     .screen-div{ visibility: hidden; height: 30px; }
 
