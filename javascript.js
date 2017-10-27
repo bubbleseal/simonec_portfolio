@@ -42,11 +42,6 @@ $(document).ready(function () {
         });
     }
 
-    //Detect viewport resizing
-    $(window).resize(function () {
-        window.location.reload();
-    });
-
     //Detect orientation change
     $(window).on("orientationchange", function (event) {
         window.location.reload();
